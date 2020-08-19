@@ -2,8 +2,8 @@
 //  ViewController.h
 //  Snake
 //
-//  Created by Mac on 2020/8/20.
-//  Copyright © 2020 马 爱林. All rights reserved.
+//  Created by 马 爱林 on 16/4/16.
+//  Copyright © 2016年 manbu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
