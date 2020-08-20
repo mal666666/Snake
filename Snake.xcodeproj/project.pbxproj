@@ -14,9 +14,11 @@
 		2F9A8C2D24ED86340080BB1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A8C2C24ED86340080BB1C /* Assets.xcassets */; };
 		2F9A8C3024ED86340080BB1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A8C2E24ED86340080BB1C /* LaunchScreen.storyboard */; };
 		2F9A8C3324ED86340080BB1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A8C3224ED86340080BB1C /* main.m */; };
+		E8DA9E3A49187ECD9081E207 /* Pods_Snake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821A34E466C1AEDB088A9283 /* Pods_Snake.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1446BD96F466C891F7E584 /* Pods-Snake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake.release.xcconfig"; path = "Target Support Files/Pods-Snake/Pods-Snake.release.xcconfig"; sourceTree = "<group>"; };
 		2F9A8C1D24ED86330080BB1C /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9A8C2024ED86330080BB1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2F9A8C2124ED86330080BB1C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +31,8 @@
 		2F9A8C2F24ED86340080BB1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F9A8C3124ED86340080BB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F9A8C3224ED86340080BB1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65611868C28A357EE36114BE /* Pods-Snake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake.debug.xcconfig"; path = "Target Support Files/Pods-Snake/Pods-Snake.debug.xcconfig"; sourceTree = "<group>"; };
+		821A34E466C1AEDB088A9283 /* Pods_Snake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8DA9E3A49187ECD9081E207 /* Pods_Snake.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 			children = (
 				2F9A8C1F24ED86330080BB1C /* Snake */,
 				2F9A8C1E24ED86330080BB1C /* Products */,
+				A9330A42C6330DC7510F7B3F /* Pods */,
+				5AE7A3491E83BB05174774C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,24 @@
 			path = Snake;
 			sourceTree = "<group>";
 		};
+		5AE7A3491E83BB05174774C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				821A34E466C1AEDB088A9283 /* Pods_Snake.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9330A42C6330DC7510F7B3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65611868C28A357EE36114BE /* Pods-Snake.debug.xcconfig */,
+				0D1446BD96F466C891F7E584 /* Pods-Snake.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F9A8C3624ED86340080BB1C /* Build configuration list for PBXNativeTarget "Snake" */;
 			buildPhases = (
+				9FE2110081B14628AB747076 /* [CP] Check Pods Manifest.lock */,
 				2F9A8C1924ED86330080BB1C /* Sources */,
 				2F9A8C1A24ED86330080BB1C /* Frameworks */,
 				2F9A8C1B24ED86330080BB1C /* Resources */,
+				AB1B06DECD6566CF4E6679BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9FE2110081B14628AB747076 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Snake-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB1B06DECD6566CF4E6679BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Snake/Pods-Snake-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Snake/Pods-Snake-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Snake/Pods-Snake-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F9A8C1924ED86330080BB1C /* Sources */ = {
@@ -287,6 +356,7 @@
 		};
 		2F9A8C3724ED86340080BB1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65611868C28A357EE36114BE /* Pods-Snake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +374,7 @@
 		};
 		2F9A8C3824ED86340080BB1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D1446BD96F466C891F7E584 /* Pods-Snake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

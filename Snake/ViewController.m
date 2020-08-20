@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <Masonry.h>
 
 #define UIScreenWidth    [UIScreen mainScreen].bounds.size.width
 #define UIScreenHeight   [UIScreen mainScreen].bounds.size.height
@@ -43,10 +44,14 @@
     self.collectionView.backgroundColor =[UIColor lightGrayColor];
     self.collectionView.scrollEnabled =0;
     [self.view addSubview :_collectionView];
+    [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.topMargin.offset(10);
+        make.left.right.offset(0);
+        make.bottomMargin.offset(0);
+    }];
     
-    float height =UIScreenHeight -nav_Height +64 - tabBar_Height +49;
-    _row =(height-20)/((UIScreenWidth-21)/20+1);
-    NSLog(@"%f",UIScreenHeight);
+//    float height =UIScreenHeight -nav_Height  - tabBar_Height ;
+//    _row =(height-20)/((UIScreenWidth-21)/20+1);
     _cell_width =(UIScreenWidth-21)/20;
     [self initSnake];
     [self bindSwipe];
@@ -55,6 +60,16 @@
     [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
     // 并让自己成为第一响应者
     [self becomeFirstResponder];
+}
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    float height =0;
+    if (@available(iOS 11.0, *)) {
+        height =self.view.safeAreaLayoutGuide.layoutFrame.size.height;
+    } else {
+        height =self.view.bounds.size.height;
+    }
+    _row =(height-20)/((UIScreenWidth-21)/20+1);
 }
 #pragma mark - 摇一摇相关方法
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
