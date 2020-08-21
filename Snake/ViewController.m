@@ -36,12 +36,11 @@
     UICollectionViewFlowLayout *layout=[[ UICollectionViewFlowLayout alloc ] init ];
     layout.minimumLineSpacing =1;
     layout.minimumInteritemSpacing =1;
-    _collectionView=[[ UICollectionView alloc ] initWithFrame :CGRectMake(0, 20,UIScreenWidth,UIScreenHeight) collectionViewLayout :layout];
+    _collectionView=[[ UICollectionView alloc ] initWithFrame :CGRectZero collectionViewLayout :layout];
     [_collectionView registerClass :[ UICollectionViewCell class ] forCellWithReuseIdentifier : _CELL ];
-    self.collectionView. backgroundColor =[ UIColor clearColor];
-    self.collectionView. delegate = self ;
-    self.collectionView. dataSource = self;
-    self.collectionView.backgroundColor =[UIColor lightGrayColor];
+    self.collectionView.backgroundColor =[ UIColor clearColor];
+    self.collectionView.delegate = self ;
+    self.collectionView.dataSource = self;
     self.collectionView.scrollEnabled =0;
     [self.view addSubview :_collectionView];
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -50,15 +49,11 @@
         make.bottomMargin.offset(0);
     }];
     
-//    float height =UIScreenHeight -nav_Height  - tabBar_Height ;
-//    _row =(height-20)/((UIScreenWidth-21)/20+1);
     _cell_width =(UIScreenWidth-21)/20;
     [self initSnake];
     [self bindSwipe];
     
-    // 设置允许摇一摇功能
     [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
-    // 并让自己成为第一响应者
     [self becomeFirstResponder];
 }
 -(void)viewDidLayoutSubviews{
@@ -69,7 +64,7 @@
     } else {
         height =self.view.bounds.size.height;
     }
-    _row =(height-20)/((UIScreenWidth-21)/20+1);
+    _row =height/(_cell_width+1);
 }
 #pragma mark - 摇一摇相关方法
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
@@ -116,14 +111,12 @@
     NSLog(@"长按");
     if(gestureRecognizer.state == UIGestureRecognizerStateBegan){
         [self initSnake];
-    }
-    else if(gestureRecognizer.state == UIGestureRecognizerStateEnded){
+    }else if(gestureRecognizer.state == UIGestureRecognizerStateEnded){
         
-    }
-    else if(gestureRecognizer.state == UIGestureRecognizerStateChanged){
+    }else if(gestureRecognizer.state == UIGestureRecognizerStateChanged){
         
-    }
-    else{
+    }else{
+        
     }
 }
 -(void)handleSwipeUp{
@@ -251,9 +244,6 @@
         return CGSizeMake (_cell_width , _cell_width );
     }
     return CGSizeZero;
-}
--( UIEdgeInsets )collectionView:( UICollectionView *)collectionView layout:( UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:( NSInteger )section{
-    return UIEdgeInsetsMake ( 1 , 1 , 1 , 1 );
 }
 
 @end

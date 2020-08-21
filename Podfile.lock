@@ -1,24 +1,16 @@
 PODS:
-  - lottie-ios (3.1.8)
   - Masonry (1.1.0)
-  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
-  - lottie-ios
   - Masonry
-  - Toast-Swift
 
 SPEC REPOS:
   trunk:
-    - lottie-ios
     - Masonry
-    - Toast-Swift
 
 SPEC CHECKSUMS:
-  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 16c812148810eaab5bd44af8f01576b628d25e66
+PODFILE CHECKSUM: 3af03ca5230b796d39bf6a143970363876a1f337
 
 COCOAPODS: 1.10.0.beta.1

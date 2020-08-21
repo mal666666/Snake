@@ -1,10 +1,8 @@
 platform :ios, '9.0'
-
+use_frameworks!
 target 'Snake' do
-  use_frameworks!
-
   pod 'Masonry'
-  pod 'Toast-Swift'
-  pod 'lottie-ios'
+#  pod 'Toast-Swift'
+#  pod 'lottie-ios'
   
 end
